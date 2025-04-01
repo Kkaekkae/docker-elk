@@ -8,7 +8,6 @@
 
 이 프로젝트는 Elasticsearch의 검색/집계 기능과 Kibana의 시각화 기능을 활용하여 어떤 데이터셋이든 분석할 수 있는 환경을 제공합니다.
 
-Elastic에서 제공하는 [공식 Docker 이미지][elastic-docker]를 기반으로 구성되어 있습니다:
 
 * [Elasticsearch](https://github.com/elastic/elasticsearch/tree/main/distribution/docker)
 * [Logstash](https://github.com/elastic/logstash/tree/main/docker)
@@ -18,11 +17,6 @@ Elastic에서 제공하는 [공식 Docker 이미지][elastic-docker]를 기반�
 
 * [`tls`](https://github.com/deviantony/docker-elk/tree/tls): Elasticsearch, Kibana(옵션), Fleet에 TLS 암호화 활성화
 * [`searchguard`](https://github.com/deviantony/docker-elk/tree/searchguard): Search Guard 지원
-
-> [!IMPORTANT]  
-> [플래티넘][subscriptions] 기능은 기본적으로 **30일**의 [체험판][license-mngmt] 기간 동안 활성화됩니다.  
-> 이 평가 기간이 종료되면, 수동 조치 없이 데이터 손실 없이 Open Basic 라이선스에 포함된 모든 무료 기능에 자동으로 전환됩니다.  
-> 이 동작을 원하지 않는 경우, [유료 기능 비활성화 방법](#how-to-disable-paid-features) 섹션을 참고하세요.
 
 ---
 
@@ -41,19 +35,6 @@ docker compose up
   <img alt="Animated demo" src="https://github.com/user-attachments/assets/501a340a-e6df-4934-90a2-6152b462c14a">
 </picture>
 
-## Philosophy
-
-이 프로젝트의 목표는 Elastic 스택이라는 강력한 기술 조합을 실험해보고 싶은 사람들에게  
-**가장 간단한 진입점**을 제공하는 것입니다.  
-
-기본 설정은 **의도적으로 최소화**되어 있으며, 특정한 방식을 강요하지 않습니다.  
-외부 의존성 없이 작동하며, 필요한 최소한의 자동화만 사용하여 작동합니다.
-
-우리는 복잡한 자동화보다는 **좋은 문서화**를 통해 여러분이 이 레포지토리를 템플릿으로 활용하고,  
-자신의 환경에 맞게 조정하고, _자신만의_ 설정을 만들 수 있도록 돕고자 합니다.  
-[sherifabdlnaby/elastdocker][elastdocker]는 이러한 철학 위에 구축된 여러 프로젝트 중 하나입니다.
-
----
 
 ## Contents
 
@@ -92,12 +73,9 @@ docker compose up
 ### Host setup  
 ### 호스트 설정
 
-* [Docker Engine][docker-install] 버전 **18.06.0** 이상  
-* [Docker Compose][compose-install] 버전 **2.0.0** 이상  
+* [Docker Engine] 버전 **18.06.0** 이상  
+* [Docker Compose] 버전 **2.0.0** 이상  
 * 최소 1.5GB의 RAM
-
-> [!NOTE]  
-> 특히 **리눅스** 환경에서는 사용자가 Docker 데몬과 상호작용할 수 있는 [필수 권한][linux-postinstall]이 설정되어 있는지 확인하세요.
 
 기본적으로 스택은 아래 포트를 노출합니다:
 
@@ -118,7 +96,7 @@ docker compose up
 
 #### Windows
 
-_Docker Desktop for Windows_의 이전 Hyper-V 모드를 사용하는 경우, `C:` 드라이브에 대해 [파일 공유][win-filesharing]가 활성화되어 있는지 확인하세요.
+_Docker Desktop for Windows_의 이전 Hyper-V 모드를 사용하는 경우, `C:` 드라이브에 대해 [win-filesharing]가 활성화되어 있는지 확인하세요.
 
 #### macOS
 
