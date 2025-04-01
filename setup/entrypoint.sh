@@ -17,7 +17,7 @@ users_passwords=(
 	[filebeat_internal]="${FILEBEAT_INTERNAL_PASSWORD:-}"
 	[heartbeat_internal]="${HEARTBEAT_INTERNAL_PASSWORD:-}"
 	[monitoring_internal]="${MONITORING_INTERNAL_PASSWORD:-}"
-	[beats_system]="${BEATS_SYSTEM_PASSWORD=:-}"
+	[beats_system]="${BEATS_SYSTEM_PASSWORD:-}"
 )
 
 declare -A users_roles
@@ -44,6 +44,8 @@ roles_files=(
 
 
 log 'Waiting for availability of Elasticsearch. This can take several minutes.'
+
+
 
 declare -i exit_code=0
 wait_for_elasticsearch || exit_code=$?
@@ -72,6 +74,10 @@ sublog 'Elasticsearch is running'
 log 'Waiting for initialization of built-in users'
 
 wait_for_builtin_users || exit_code=$?
+
+log 'Waiting for cluster to become healthy enough for role creation'
+
+wait_for_cluster_ready || exit 1
 
 if ((exit_code)); then
 	suberr 'Timed out waiting for condition'

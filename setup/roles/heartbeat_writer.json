@@ -1,18 +1,9 @@
 {
-  "cluster": [
-    "manage_ilm",
-    "manage_index_templates",
-    "monitor"
-  ],
+  "cluster": ["manage_ilm", "manage_index_templates", "monitor"],
   "indices": [
     {
-      "names": [
-        "heartbeat-*"
-      ],
-      "privileges": [
-        "create_doc",
-        "manage"
-      ]
+      "names": ["heartbeat-*"],
+      "privileges": ["write", "create", "manage"]
     }
   ]
 }
