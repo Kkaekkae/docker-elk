@@ -2,6 +2,8 @@
 # Elastic stack (ELK) on Docker
 도커(Docker)와 도커 컴포즈(Docker Compose)를 사용하여 최신 버전의 Elastic 스택을 실행해보세요.
 
+이 저장소는 [원본 프로젝트](https://github.com/deviantony/docker-elk)를 포크하여 한국어 번역 및 일부 설정을 추가하였습니다.
+
 [![Elastic Stack version](https://img.shields.io/badge/Elastic%20Stack-8.15.2-00bfb3?style=flat&logo=elastic-stack)](https://www.elastic.co/blog/category/releases)  
 [![Build Status](https://github.com/deviantony/docker-elk/workflows/CI/badge.svg?branch=main)](https://github.com/deviantony/docker-elk/actions?query=workflow%3ACI+branch%3Amain)  
 [![Join the chat](https://badges.gitter.im/Join%20Chat.svg)](https://app.gitter.im/#/room/#deviantony_docker-elk:gitter.im)
