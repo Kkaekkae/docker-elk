@@ -1,19 +1,9 @@
 {
-  "cluster": [
-    "manage_ilm",
-    "manage_index_templates",
-    "monitor"
-  ],
+  "cluster": ["manage_ilm", "manage_index_templates", "monitor"],
   "indices": [
     {
-      "names": [
-        ".monitoring-*-mb",
-        "metricbeat-*"
-      ],
-      "privileges": [
-        "create_doc",
-        "manage"
-      ]
+      "names": [".monitoring-*-mb", "metricbeat-*"],
+      "privileges": ["write", "create", "create_index", "manage", "manage_ilm"]
     }
   ]
 }

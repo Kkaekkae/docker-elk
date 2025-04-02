@@ -8,13 +8,8 @@
   ],
   "indices": [
     {
-      "names": [
-        "filebeat-*"
-      ],
-      "privileges": [
-        "create_doc",
-        "manage"
-      ]
+      "names": ["filebeat-*"],
+      "privileges": ["write", "create", "manage"]
     }
   ]
 }
